@@ -6,7 +6,8 @@ RUN npm ci
 COPY . .
 
 FROM builder AS test
-RUN node test/cache-recovery.js && node test/image-processing.js
+RUN apk --no-cache add redis
+RUN --network=none node test/cache-recovery.js && node test/image-processing.js && node test/http-cache-recovery.js
 RUN npm prune --omit=dev
 
 FROM node:24-alpine@sha256:ebfe2f90462722a7a4de65e91990e97fe0d401c70e0e762c5b53302f905ec1c1
