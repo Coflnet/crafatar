@@ -7,19 +7,20 @@
     "test": "mocha"
   },
   "engines": {
-    "node": "12.16.1"
+    "node": ">=24"
   },
   "dependencies": {
-    "@randy.tarampi/lwip": "^1.3.1",
-    "canvas": "^2.6.1",
+    "canvas": "^3.2.0",
     "crc": "^3.8.0",
-    "ejs": "^3.1.5",
+    "ejs": "^3.1.10",
     "mime": "^2.4.6",
-    "redis": "^3.0.2",
-    "request": "^2.88.2",
+    "redis": "^3.1.2",
     "toobusy-js": "^0.5.1"
   },
   "devDependencies": {
-    "mocha": "^7.2.0"
+    "mocha": "^12.0.2"
+  },
+  "allowScripts": {
+    "canvas@3.2.3": true
   }
 }

@@ -33,8 +33,8 @@ var config = {
     local: parseInt(process.env.CACHE_LOCAL) || 1200,
     // seconds until browser will request image again
     browser: parseInt(process.env.CACHE_BROWSER) || 3600,
-    // If true, redis is flushed on start.
-    // Use this to avoid issues when you have a persistent redis database but an ephemeral storage
+    // Retained for compatibility; missing local files are recovered from texture hashes.
+    // Redis metadata is never flushed on startup.
     ephemeral: process.env.EPHEMERAL_STORAGE === "true",
     // Used for information on the front page
     cloudflare: process.env.CLOUDFLARE === "true"
